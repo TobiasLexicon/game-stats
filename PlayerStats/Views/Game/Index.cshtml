@@ -1,0 +1,39 @@
+@model IEnumerable<GameViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeTeamName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AwayTeamName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Result)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <partial name="_GamePartialView" model=item />  
+}
+    </tbody>
+</table>
+<div id="Result"></div>

@@ -1,0 +1,22 @@
+﻿@model GameViewModel
+
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => Model.Id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => Model.Date)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => Model.HomeTeamName)
+        <a href="#" onclick="getCityName('@Url.Action("GetTeamCity", "Game")', '@Model.HomeTeamName')"><sup>*</sup></a>
+
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => Model.AwayTeamName)
+        <a href="#" onclick="getCityName('@Url.Action("GetTeamCity", "Game")', '@Model.AwayTeamName')"><sup>*</sup></a>
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => Model.Result)
+    </td>
+</tr>
